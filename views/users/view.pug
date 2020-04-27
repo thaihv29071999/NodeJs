@@ -1,0 +1,11 @@
+extends ../layouts/common
+block content   
+    div
+        h1 View users
+        table.table
+            tr  
+                th Name
+                th Phone
+            tr 
+                td #{user.name}
+                td #{user.phone}

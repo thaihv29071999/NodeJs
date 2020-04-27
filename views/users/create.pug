@@ -1,0 +1,14 @@
+extends ../layouts/common
+block content 
+    div
+        if errors
+            .alert.alert-danger #{errors}
+        h1 Create form
+        form(action="/users/create", method="POST")
+            .form-group
+                label(for="name") Name
+                input#name.form-control(name="name", type="text", value=value ? value.name : "")
+            .form-group
+                label(for="phone") Phone
+                input#phone.form-control(name="phone", type="text", value=value ? value.phone : "")    
+            button.btn.btn-primary Create
