@@ -1,0 +1,17 @@
+extends ../layouts/common
+block content
+    .row
+        each p in products
+            .col-sm-3
+                .card(style='width: 18rem;')
+                img.card-img-top(src= p.image  , alt='...')
+                .card-body(style='border: 1px solid #dedbdb')
+                    h5.card-title #{p.name}
+                    p.card-text #{p.description}
+                    a.btn.btn-primary(href='/cart/add/' + p.id) Add to carts
+        nav(aria-label='Page navigation example')
+            ul.pagination
+                - var n = 1;
+                while n <=  pageCount
+                    li.page-item
+                        a.page-link(href='/products?page=' + n)= n++
